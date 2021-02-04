@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Cadenの站点</title>
+    <link>http://ChenCaden.github.io/tags/blog/</link>
+    <description>Recent content in blog on Cadenの站点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Sep 2020 10:15:50 +0800</lastBuildDate><atom:link href="http://ChenCaden.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何用hugo建造自己的博客</title>
+      <link>http://ChenCaden.github.io/posts/how_to_make_a_blog_with_hugo/</link>
+      <pubDate>Sat, 26 Sep 2020 10:15:50 +0800</pubDate>
+      
+      <guid>http://ChenCaden.github.io/posts/how_to_make_a_blog_with_hugo/</guid>
+      <description>[TOC]
+开始之前 相信来到这里的各位都知道hugo（中文版)是什么了吧。 什么，你不知道？那么请阅读以下内容：
+Hugo是由Go语言实现的静态网站生成器。 简单、易用、高效、易扩展、快速部署。 对比Hexo，Hugo仅需一个二进制文件（hugo.exe）即可实现网站生成的生成。 而且就如它官网介绍： The world’s fastest framework for building websites。 且Hugo是目前最快的网站构建框架。 凭借其惊人的速度和灵活性，解决了环境依赖、性能较差的问题。 还有使用简单、部署方便等诸多优点。 通过 LiveReload 实时刷新，极大的优化文章的写作体验。 Hugo使建站再次变得有趣。 看到了吗，这就是hugo，好了，那就让我们开始建站吧！
+基本工具 git
+下载hugo hugo在windows下一共有2种下载方式：
+1、github
+选择合适自己电脑的版本下载即可
+2、代码实现（Chocolatey）
+按下Windows+R键打开命令行，在里面输入
+1 2 3 4 5  powershell -NoProfile -ExecutionPolicy unrestricted -Command &amp;#34;iex ((new-object net.webclient).DownloadString(&amp;#39;https://chocolatey.org/install.ps1&amp;#39;))&amp;#34; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin choco install hugo -confirm   即可安装hugo
+*配置hugo路径
+配置路径是至关重要的一点，不然要使用hugo命令就只能使用完整命令
+配置路径具体方法如下：
+ 1、右键此电脑，选中属性  2、点击系统高级设置  3、点击环境变量  4、在系统变量中找到path，再点击编辑  5、点击新建，填入hugo解压的文件目录   做完这一切后，打开命令行，输入hugo version来检查你是否成功安装hugo</description>
+    </item>
+    
+  </channel>
+</rss>

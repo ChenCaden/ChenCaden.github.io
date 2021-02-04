@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>如何用hugo建造自己的博客 | Cadenの站点</title>
+    <meta property="og:title" content="如何用hugo建造自己的博客 - Cadenの站点">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-09-26T10:15:50&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-09-26T10:15:50&#43;08:00'>
+        
+    <meta name="Keywords" content="[blog hugo 博客]">
+    <meta name="description" content="如何用hugo建造自己的博客">
+        
+    <meta name="author" content="Caden">
+    <meta property="og:url" content="http://ChenCaden.github.io/posts/how_to_make_a_blog_with_hugo/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://ChenCaden.github.io">
+                        Cadenの站点
+                    </a>
+                
+                <p class="description">专注but不限于c&#43;&#43;、python、html、css、js</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://ChenCaden.github.io">首页</a>
+                    
+                    <a  href="http://ChenCaden.github.io/archives/" title="归档">归档</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+                <img src="https://storage.live.com/items/240ACD90363D22FB!3827:/top.jpg" />
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">如何用hugo建造自己的博客</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年9月26日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://ChenCaden.github.io/categories/hugo'>hugo</a></span>
+            
+            <span class="meta-category"><a href='http://ChenCaden.github.io/categories/blog'>blog</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>[TOC]</p>
+<h2 id="开始之前">开始之前</h2>
+<p>相信来到这里的各位都知道<a href="https://gohugo.io">hugo</a>（<a href="https://www.gohugo.org">中文版</a>)是什么了吧。
+什么，你不知道？那么请阅读以下内容：</p>
+<pre><code>Hugo是由Go语言实现的静态网站生成器。
+简单、易用、高效、易扩展、快速部署。
+对比Hexo，Hugo仅需一个二进制文件（hugo.exe）即可实现网站生成的生成。
+而且就如它官网介绍：
+The world’s fastest framework for building websites。
+且Hugo是目前最快的网站构建框架。
+凭借其惊人的速度和灵活性，解决了环境依赖、性能较差的问题。
+还有使用简单、部署方便等诸多优点。
+通过 LiveReload 实时刷新，极大的优化文章的写作体验。
+Hugo使建站再次变得有趣。
+</code></pre><p>看到了吗，这就是hugo，好了，那就让我们开始建站吧！</p>
+<h2 id="基本工具">基本工具</h2>
+<p><a href="https://git-scm.com">git</a></p>
+<h2 id="下载hugo">下载hugo</h2>
+<p>hugo在windows下一共有2种下载方式：</p>
+<p>1、<a href="https://github.com/gohugoio/hugo/releases">github</a></p>
+<p>选择合适自己电脑的版本下载即可</p>
+<p>2、代码实现（Chocolatey）</p>
+<p>按下<code>Windows+R</code>键打开命令行，在里面输入</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">powershell -NoProfile -ExecutionPolicy unrestricted -Command <span style="color:#d14">&#34;iex ((new-object net.webclient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&#34;</span>
+
+SET <span style="color:#008080">PATH</span><span style="color:#000;font-weight:bold">=</span>%PATH%;%ALLUSERSPROFILE%<span style="color:#d14">\c</span>hocolatey<span style="color:#d14">\b</span>in
+
+choco install hugo -confirm
+</code></pre></td></tr></table>
+</div>
+</div><p>即可安装hugo</p>
+<p>*配置hugo路径</p>
+<p>配置路径是至关重要的一点，不然要使用hugo命令就只能使用完整命令</p>
+<p>配置路径具体方法如下：</p>
+<ul>
+<li>1、右键此电脑，选中属性
+
+        <a data-fancybox="gallery" href="https://i.loli.net/2021/02/03/aLCHcjPZvWDTmXt.png">
+            <img class="mx-auto" alt="1.png" src="https://i.loli.net/2021/02/03/aLCHcjPZvWDTmXt.png" />
+        </a>
+    </li>
+<li>2、点击<code>系统高级设置</code>
+
+        <a data-fancybox="gallery" href="https://i.loli.net/2021/02/03/hjQE9OR25GnUuKc.png">
+            <img class="mx-auto" alt="2.png" src="https://i.loli.net/2021/02/03/hjQE9OR25GnUuKc.png" />
+        </a>
+    </li>
+<li>3、点击环境变量
+
+        <a data-fancybox="gallery" href="https://i.loli.net/2021/02/03/CLdWOufFwNQi7yz.png">
+            <img class="mx-auto" alt="3.png" src="https://i.loli.net/2021/02/03/CLdWOufFwNQi7yz.png" />
+        </a>
+    </li>
+<li>4、在系统变量中找到path，再点击编辑
+
+        <a data-fancybox="gallery" href="https://i.loli.net/2021/02/03/BQWkCaOJgvGn5p9.png">
+            <img class="mx-auto" alt="4.png" src="https://i.loli.net/2021/02/03/BQWkCaOJgvGn5p9.png" />
+        </a>
+    </li>
+<li>5、点击新建，填入hugo解压的文件目录
+
+        <a data-fancybox="gallery" href="https://i.loli.net/2021/02/03/gwUYkZ6EAF83x7p.png">
+            <img class="mx-auto" alt="5.png" src="https://i.loli.net/2021/02/03/gwUYkZ6EAF83x7p.png" />
+        </a>
+    </li>
+</ul>
+<p>做完这一切后，打开命令行，输入<code>hugo version</code>来检查你是否成功安装hugo</p>
+<h2 id="新建博客">新建博客</h2>
+<p>首先按下<code>Windows+R</code>键打开命令行，cd到你想建站的目录下<br>
+使用命令<code>hugo new site [mysite]</code></p>
+<p>*注意，这里的[mysite]换成你所建的站的名字</p>
+<p>然后在你的指定文件夹下就新建了了一个hugo博客
+
+        <a data-fancybox="gallery" href="https://i.loli.net/2021/02/03/ep9uQkAUlvm8zf2.png">
+            <img class="mx-auto" alt="6.png" src="https://i.loli.net/2021/02/03/ep9uQkAUlvm8zf2.png" />
+        </a>
+    
+目录结构如下：</p>
+<pre><code>├── archetypes
+│   └── default.md
+├── content             # 博客文章所在目录
+├── data                
+├── layouts             # 网站布局
+├── static              # 一些静态内容
+├── themes              # 博客主题
+└── config.toml         # 博客站点的配置文件
+</code></pre><h2 id="下载主题">下载主题</h2>
+<p>hugo有几百种不同的<a href="https://themes.gohugo.io">主题</a>，你可以自行选择。</p>
+<p>选择完后就进行安装</p>
+<p>安装方式很简单，几行代码就可以搞定:</p>
+<p>*注意，以下所有的代码都在命令行中实现</p>
+<p>1、 <code>cd theme</code></p>
+<p>2、 <code>git clone [website]</code> *[website]为你选择的主题在github上的链接(<code>https://github.com/Name/example.git</code>)</p>
+<p>3、 按照你选择的主题教程安装剩下部分</p>
+<h2 id="新建文章">新建文章</h2>
+<p>既然要做博客，自然要写文章</p>
+<p>hugo支持<code>.md</code>文件转<code>.html</code>文件，所以很方便，但你需要有一定<a href="https://www.runoob.com/markdown/md-tutorial.html">markdown</a>基础</p>
+<p>步骤：</p>
+<p>1、 <code>cd ./</code></p>
+<p>2、 <code>mkdir content\posts</code></p>
+<p>3、 <code>hugo new posts\[name].md</code> *[name]为文章名</p>
+<p>4、 <code>notepad content\posts\[name].md</code></p>
+<p>5、 开始书写文章！</p>
+<p>*需要注意的是，文章上方会有<code>---</code>或<code>+++</code>等，它包括了提交文档的主要数据，例如名称、时间等
+在 Hugo 中，这叫做前缀
+在前缀之后，才是正文.下面编辑第一个提交文件内容：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#a61717;background-color:#e3d2d2">---</span>
+<span style="color:#a61717;background-color:#e3d2d2">title:</span> <span style="color:#d14">&#34;Test&#34;</span>
+<span style="color:#a61717;background-color:#e3d2d2">date:</span> <span style="color:#099">2020-12-04</span><span style="color:#a61717;background-color:#e3d2d2">T</span><span style="color:#099">23</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#099">04</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#099">22</span><span style="color:#a61717;background-color:#e3d2d2">+</span><span style="color:#099">08</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#099">00</span>
+<span style="color:#a61717;background-color:#e3d2d2">draft:</span> <span style="color:#000;font-weight:bold">true</span>
+<span style="color:#a61717;background-color:#e3d2d2">---</span>
+<span style="color:#a61717;background-color:#e3d2d2">Hugo</span> <span style="color:#a61717;background-color:#e3d2d2">Test!</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>6、 写完后保存，然后<code>hugo server -D</code>将其配置到浏览器上，然后在浏览器里输入<code>http://localhost:1313</code>以打开你的博客</p>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='http://ChenCaden.github.io/tags/hugo'>hugo</a></li>
+                
+                <li><a href='http://ChenCaden.github.io/tags/blog'>blog</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "ChenCaden/repo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://ChenCaden.github.io">Cadenの站点 By Caden</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='http://ChenCaden.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://ChenCaden.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://ChenCaden.github.io/posts/how_to_make_a_blog_with_hugo/" title="如何用hugo建造自己的博客">如何用hugo建造自己的博客</a>
+    </li>
+    
+    <li>
+        <a href="http://ChenCaden.github.io/posts/first/" title="First">First</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href="/categories">分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="http://ChenCaden.github.io/categories/blog/">blog (1)</a></li>
+    
+    <li><a href="http://ChenCaden.github.io/categories/hugo/">hugo (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href="/tags">标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="http://ChenCaden.github.io/tags/blog/">blog</a>
+    
+    <a href="http://ChenCaden.github.io/tags/hugo/">hugo</a>
+    
+    <a href="http://ChenCaden.github.io/tags/test/">test</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="http://ChenCaden.github.io/Clarity.github.io" title="An Internet Game">Clarity</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://ChenCaden.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
