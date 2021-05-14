@@ -13,10 +13,18 @@
       <pubDate>Sat, 26 Sep 2020 10:15:50 +0800</pubDate>
       
       <guid>http://ChenCaden.github.io/posts/how_to_make_a_blog_with_hugo/</guid>
-      <description>[TOC]
+      <description>目录 [TOC]
+开始之前
+基本工具
+下载hugo
+新建博客
+下载主题
+新建文章
 开始之前 相信来到这里的各位都知道hugo（中文版)是什么了吧。 什么，你不知道？那么请阅读以下内容：
 Hugo是由Go语言实现的静态网站生成器。 简单、易用、高效、易扩展、快速部署。 对比Hexo，Hugo仅需一个二进制文件（hugo.exe）即可实现网站生成的生成。 而且就如它官网介绍： The world’s fastest framework for building websites。 且Hugo是目前最快的网站构建框架。 凭借其惊人的速度和灵活性，解决了环境依赖、性能较差的问题。 还有使用简单、部署方便等诸多优点。 通过 LiveReload 实时刷新，极大的优化文章的写作体验。 Hugo使建站再次变得有趣。 看到了吗，这就是hugo，好了，那就让我们开始建站吧！
 基本工具 git
+Github Desktop
+typora1
 下载hugo hugo在windows下一共有2种下载方式：
 1、github
 选择合适自己电脑的版本下载即可
